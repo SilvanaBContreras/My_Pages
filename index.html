@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#174beb">
+<meta name="description" content="Tutoría previa al cierre de la primera competencia de Data Mining en economía y finanzas 2026. Retroalimentación personalizada, workflows y nuevos avances.">
+<title>Tutoría previa al cierre de la primera competencia · Data Mining 2026</title>
+<style>
+:root{--paper:#fafaf7;--ink:#182125;--muted:#555e63;--accent:#174beb;--line:#d6dbde;--blue:#eef2ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;border-top:5px solid var(--accent)}
+::selection{background:#dbe4ff;color:#122661}.page{max-width:1160px;margin:0 auto;padding:0 58px}
+.masthead{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:32px 0 26px;border-bottom:1px solid var(--line)}
+.course{font-size:12px;line-height:1.7;font-weight:650;letter-spacing:.105em;text-transform:uppercase;margin:0}.course span{color:var(--accent);white-space:nowrap}.signal{width:61px;height:26px;flex-shrink:0;color:var(--accent)}
+.hero{padding:57px 0 36px}h1{font-size:clamp(36px,5.5vw,66px);line-height:1.06;letter-spacing:-.048em;max-width:890px;margin:0;font-weight:650;text-wrap:balance}
+.subtitle{font-size:clamp(19px,2.1vw,24px);line-height:1.48;letter-spacing:-.016em;font-weight:500;max-width:890px;margin:25px 0 0;color:var(--accent);text-wrap:pretty}
+p{font-size:16px;line-height:1.75;margin:0;text-wrap:pretty}strong{font-weight:650}
+.opening{display:grid;grid-template-columns:1fr 1fr;gap:44px;padding-bottom:31px;align-items:start}.opening .material{font-size:18px;line-height:1.7}.opening .material strong{font-weight:550}.opening .model{border-left:2px solid var(--accent);padding-left:24px;color:var(--muted)}
+.readiness{padding-bottom:28px;font-size:18px;max-width:870px}.readiness strong{color:var(--accent)}
+.expectation{padding:26px 31px;background:var(--blue);border-left:3px solid var(--accent);margin-bottom:30px}.expectation p{font-size:18px;line-height:1.65;font-weight:500}
+.dialogue{max-width:810px;padding-bottom:34px}.dialogue strong{color:var(--accent)}
+.stages{border-bottom:1px solid var(--line)}.stage{display:grid;grid-template-columns:50px 310px 1fr;gap:26px;padding:31px 0;border-top:1px solid var(--line);align-items:start}.number{color:var(--accent);font-size:33px;font-weight:400;letter-spacing:-.04em;line-height:1.1;font-variant-numeric:tabular-nums}
+h2{font-size:23px;line-height:1.35;letter-spacing:-.025em;margin:0;font-weight:600;text-wrap:pretty}.stage h2{font-size:21px}.stage .detail{font-size:15px;line-height:1.75;color:var(--muted)}
+.list{margin:0;padding:0;list-style:none}.list li{position:relative;margin:0;padding:0 0 11px 16px;font-size:15px;line-height:1.65;text-wrap:pretty}.list li:last-child{padding-bottom:0}.list li::before{content:"";width:4px;height:4px;background:var(--accent);position:absolute;top:10px;left:0}.list strong{color:var(--ink)}
+.bridge{padding:34px 0 25px}.bridge p{font-size:23px;line-height:1.4;letter-spacing:-.02em;font-weight:550;max-width:700px}.bridge+.stage{border-top:0;padding-top:0}
+footer{padding:29px 0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted)}footer p{font-size:12px;line-height:1.6}footer .smallmark{width:28px;height:3px;background:var(--accent)}
+@media(max-width:900px){.page{padding:0 34px}.stage{grid-template-columns:40px 240px 1fr;gap:20px}.hero{padding-top:43px}.opening{gap:30px}.stage h2{font-size:20px}}
+@media(max-width:680px){body{border-top:4px solid var(--accent)}.page{padding:0 23px}.masthead{padding:22px 0 19px;gap:16px}.course{font-size:10px;letter-spacing:.07em;max-width:265px}.signal{width:43px}.hero{padding:34px 0 28px}h1{font-size:39px;letter-spacing:-.045em}.subtitle{font-size:20px;margin-top:21px}.opening{grid-template-columns:1fr;gap:23px;padding-bottom:25px}.opening .material{font-size:17px}.opening .model{padding-left:18px}.readiness{font-size:17px;padding-bottom:24px}.expectation{padding:22px;margin-bottom:24px}.expectation p{font-size:17px}.dialogue{padding-bottom:27px}.stage{grid-template-columns:36px 1fr;gap:15px 16px;padding:27px 0}.number{font-size:29px}.stage .detail{grid-column:2}.stage h2{font-size:21px}.bridge{padding:30px 0 23px}.bridge p{font-size:21px}p{font-size:15px}footer{padding-bottom:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{@page{size:A4;margin:15mm}body{background:white;border:0}.page{padding:0;max-width:none}.masthead{padding-top:0}.hero{padding:24px 0}h1{font-size:36px}.subtitle{font-size:17px;margin-top:15px}p{font-size:10.5pt;line-height:1.5}.opening{gap:25px;padding-bottom:20px}.opening .material,.readiness{font-size:12pt}.expectation{padding:18px;margin-bottom:20px;break-inside:avoid}.expectation p{font-size:12pt}.dialogue{padding-bottom:20px}.stage{grid-template-columns:30px 195px 1fr;gap:17px;padding:22px 0;break-inside:avoid}.number{font-size:24px}.stage h2{font-size:15px}.list li{font-size:10pt;line-height:1.5;padding-bottom:7px}.bridge{padding:22px 0}.bridge p{font-size:16px}footer p{font-size:9pt}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="masthead">
+<p class="course">Data Mining en economía y finanzas <span>2026</span></p>
+<svg class="signal" viewBox="0 0 61 26" fill="none" aria-hidden="true"><path d="M3 20L19 13L35 17L57 4" stroke="currentColor" stroke-width="1.5"/><circle cx="3" cy="20" r="3" fill="currentColor"/><circle cx="19" cy="13" r="3" fill="currentColor"/><circle cx="35" cy="17" r="3" fill="currentColor"/><circle cx="57" cy="4" r="3" fill="currentColor"/></svg>
+</header>
+<main>
+<section class="hero" aria-labelledby="title">
+<h1 id="title">Tutoría previa al cierre de la primera competencia</h1>
+<p class="subtitle" role="doc-subtitle">La tutoría se propone darles retroalimentación personalizada y constructiva sobre lo hecho y producir nuevos avances.</p>
+</section>
+<div class="opening">
+<p class="material">Es clave que vengan con sus <strong>experimentos, resultados, dudas, ideas, prejuicios, hallazgos, frustraciones.</strong> A partir de ese material valiosísimo, colectivamente construiremos algo superador.</p>
+<p class="model">Piensen en sus modelos como las maquetas avanzadas con las que llegan los chicos de FADU a las materias de diseño proyectual. Vamos a observarlas, apuntalar cosas, corregir cielorrasos (inflados) que se podrían derrumbar, reforzar las paredes que no están bien apuntaladas, encuadrar las ventanas “chingadas”.</p>
+</div>
+<p class="readiness"><strong>No necesitan tener todas las respuestas.</strong> Pero sí conocer su trabajo y tenerlo registrado para poder examinar sus decisiones.</p>
+<div class="expectation"><p>Mi expectativa es que se vayan con nuevas cosas para probar, que identifiquen sus modelos mejores candidatos, que abandonen algún yeite inservible que no se atreven a soltar, que traspasen alguna barrera que los está frenando y que lideren la competencia!</p></div>
+<p class="dialogue">Cada uno de uds tendrá un turno de <strong>~10 minutos para hablar.</strong> Recibirán preguntas mías. El diálogo estará abierto entre los 4 siempre.</p>
+<div class="stages">
+<section class="stage" aria-labelledby="stage-1">
+<span class="number" aria-hidden="true">01</span>
+<h2 id="stage-1">Uds comparten una “foto” en vivo contando esto:</h2>
+<ul class="list detail">
+<li>Carrera de grado, trabajo actual, experiencia en ciencia de datos y programación.</li>
+<li>Cuántos submits al bot de la competencia-uno (¿tienen una estrategia?)</li>
+<li>Score leaderboard público.</li>
+<li>¿Están usando Google Cloud?</li>
+<li>¿Cuál es el mayor problema que están enfrentando?</li>
+<li>¿Por qué creen que les está yendo como les va?</li>
+<li>¿Qué es lo más loco que probaron hacer?</li>
+</ul>
+</section>
+<div class="bridge"><p>Luego empezamos a caminar por vuestros workflows:</p></div>
+<section class="stage" aria-labelledby="stage-2">
+<span class="number" aria-hidden="true">02</span>
+<h2 id="stage-2">¿Probaron algo de esto en la etapa de preprocesamiento? ¿Lo midieron? ¿Cómo?</h2>
+<ul class="list detail">
+<li><strong>Calidad de Datos:</strong> tratamiento de variables rotas.</li>
+<li><strong>Data Drifting:</strong> ajuste por inflación, dólar blue, dólar oficial, UVA, ranking, ranking con cero fijo, etc.</li>
+<li><strong>Estadística clásica:</strong> eliminación de variables con alto porcentaje de valores faltantes, imputación de nulos.</li>
+<li><strong>Feature Engineering Intrames.</strong></li>
+<li><strong>Feature Engineering Histórico:</strong> lags, delta-lags, otros…</li>
+<li><strong>Reducción Dimensionalidad ML:</strong> Canaritos Asesinos.</li>
+</ul>
+</section>
+<section class="stage" aria-labelledby="stage-3">
+<span class="number" aria-hidden="true">03</span>
+<h2 id="stage-3">Avanzamos al modelado:</h2>
+<ul class="list detail">
+<li><strong>Estrategia de entrenamiento:</strong> particiones, meses.</li>
+<li><strong>Undersampling de la clase mayoritaria:</strong> sí / no.</li>
+<li><strong>Target Engineering:</strong> Clase Ternaria, 0={CONTINUA}, 1 = {BAJA+1, BAJA+2}.</li>
+<li><strong>Métrica:</strong> AUC, etc.</li>
+<li><strong>Optimización de hiperparámetros:</strong> cantidad de iteraciones de la Bayesian Optimization, hiperparámetros que entran en la optimización y sus bordes, hiperparámetros que quedaron fijos.</li>
+<li><strong>Feature Importance:</strong> qué observaron en los distintos experimentos que realizaron.</li>
+</ul>
+</section>
+<section class="stage" aria-labelledby="stage-4">
+<span class="number" aria-hidden="true">04</span>
+<h2 id="stage-4">Luego llegamos a la etapa de “Producción”:</h2>
+<ul class="list detail">
+<li><strong>Estrategia de entrenamiento:</strong> meses (todos).</li>
+<li><strong>Undersampling de la clase mayoritaria:</strong> sí / no.</li>
+<li><strong>Hiperparámetros:</strong> decisiones.</li>
+<li><strong>Futuro: 202108.</strong></li>
+<li><strong>Ensembles:</strong> sí / no.</li>
+<li><strong>Cantidad de Envíos:</strong> ¿cómo la deciden?</li>
+</ul>
+</section>
+<section class="stage" aria-labelledby="stage-5">
+<span class="number" aria-hidden="true">05</span>
+<h2 id="stage-5">El futuro (no de la predicción sino el de ustedes!!!)</h2>
+<ul class="list detail">
+<li>¿Cuál es el plan para los días que quedan de competencia?</li>
+<li>¿Ideas para lidiar con el Leaderboard público?</li>
+<li>¿Identificaron cosas que tienen que hacer sí o sí para mejorar sus modelos?</li>
+</ul>
+</section>
+</div>
+</main>
+<footer><p>Tutora Silvana Contreras</p><span class="smallmark" aria-hidden="true"></span></footer>
+</div>
+</body>
+</html>
