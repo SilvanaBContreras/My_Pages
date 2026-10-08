@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contenidos consolidados del curso de redes complejas</title>
+<style>
+:root{color-scheme:light;--ink:#29333b;--muted:#64717b;--accent:#35556d;--line:#dce2e6;--paper:#fff;--soft:#f5f7f8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.skip-link{position:fixed;left:18px;top:-60px;z-index:10;background:#fff;padding:8px 14px;border:1px solid var(--accent)}
+.skip-link:focus{top:12px}
+.layout{max-width:1270px;margin:0 auto;padding:54px 42px 72px;display:grid;grid-template-columns:260px minmax(0,820px);gap:58px;align-items:start}
+.sidebar{position:sticky;top:28px;max-height:calc(100vh - 56px);overflow-y:auto;scrollbar-width:thin;border-right:1px solid var(--line);padding-right:22px}
+.sidebar summary{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:650;color:var(--muted);padding:0 0 16px;cursor:pointer;list-style:none}
+.sidebar summary::-webkit-details-marker{display:none}
+.sidebar nav{display:flex;flex-direction:column;gap:3px;padding-bottom:10px}
+.sidebar nav a{font-size:13px;line-height:1.5;text-decoration:none;color:#586670;padding:8px 0 8px 11px;border-left:2px solid transparent;overflow-wrap:anywhere}
+.sidebar nav a:hover{color:var(--accent);border-left-color:#a8bac6}
+.sidebar nav a[aria-current="location"]{color:var(--accent);border-left-color:var(--accent);font-weight:600}
+main{min-width:0}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:40px;line-height:1.17;letter-spacing:-.025em;margin:0 0 22px;color:#243644;max-width:760px}
+h1+p{font-size:17px;color:var(--muted);line-height:1.65;margin:0 0 43px;max-width:720px}
+h2{font-size:23px;line-height:1.35;letter-spacing:-.01em;font-weight:600;color:#293e4e;margin:48px 0 20px;padding:0 0 13px;border-bottom:1px solid var(--line);scroll-margin-top:28px}
+main h2:first-of-type{margin-top:0}
+p{margin:20px 0}
+ul{padding-left:23px;margin:0 0 24px}
+li{padding-left:5px;margin:0 0 11px}
+li::marker{color:#647f92;font-size:.8em}
+strong{font-weight:650}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.6;margin:20px 0 34px;table-layout:fixed}
+th,td{padding:12px 15px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+th{background:var(--soft);font-size:13px;letter-spacing:.01em;font-weight:650;color:#384c5b;border-top:1px solid var(--line)}
+th:first-child,td:first-child{width:29%}
+td:first-child{color:#344f63;font-weight:550}
+main>p:last-child{border-top:1px solid var(--line);padding-top:20px;margin-top:38px;color:var(--muted);font-size:14px}
+@media(max-width:1000px){.layout{grid-template-columns:220px minmax(0,1fr);gap:32px;padding:38px 28px}.sidebar{padding-right:16px}h1{font-size:35px}}
+@media(max-width:760px){.layout{display:block;padding:24px 22px 42px}.sidebar{position:static;max-height:none;padding:0;margin:0 0 30px;border-right:0;border-bottom:1px solid var(--line)}.sidebar summary{font-size:13px;letter-spacing:.04em;padding:0 0 14px;display:flex;justify-content:space-between}.sidebar summary::after{content:'+';font-size:18px;line-height:1}.sidebar details[open] summary::after{content:'−'}.sidebar nav{padding-bottom:18px}.sidebar nav a{font-size:14px;padding:7px 10px}h1{font-size:32px}h1+p{font-size:16px;margin-bottom:32px}h2{font-size:21px;margin-top:38px;scroll-margin-top:20px}table{font-size:13px}th,td{padding:10px 9px}th:first-child,td:first-child{width:33%}li{padding-left:2px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{font-size:10.5pt;line-height:1.5}.layout{display:block;max-width:none;padding:0}.sidebar,.skip-link{display:none}h1{font-size:27pt}h1+p{font-size:11pt;margin-bottom:20pt}h2{font-size:14pt;margin-top:22pt;break-after:avoid}li{margin-bottom:6pt;break-inside:avoid}table{font-size:9pt}th,td{padding:7pt}tr{break-inside:avoid}thead{display:table-header-group}@page{size:A4;margin:19mm}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+<div class="layout">
+<aside class="sidebar" aria-label="Navegación del documento">
+<details id="indice" open>
+<summary>Índice</summary>
+<nav aria-label="Áreas temáticas"><a href="#seccion-1">1. Librerías y módulos utilizados</a>
+<a href="#seccion-2">2. Obtención, lectura y organización de datos</a>
+<a href="#seccion-3">3. Matrices de adyacencia y selección de enlaces</a>
+<a href="#seccion-4">4. Construcción, inspección y modificación de grafos</a>
+<a href="#seccion-5">5. Conectividad, componentes, distancias y eficiencia</a>
+<a href="#seccion-6">6. Grados y caracterización topológica</a>
+<a href="#seccion-7">7. Centralidades e importancia de los nodos</a>
+<a href="#seccion-8">8. Visualización de matrices, grafos y atributos</a>
+<a href="#seccion-9">9. Distribuciones y ajuste de leyes de potencia</a>
+<a href="#seccion-10">10. Detección, evaluación y comparación de comunidades</a>
+<a href="#seccion-11">11. Prototipos de redes y comparación mediante simulaciones</a>
+<a href="#seccion-12">12. Simulación de difusión de información</a>
+<a href="#seccion-13">13. Selección de semillas y evaluación de estrategias de influencia</a>
+<a href="#seccion-14">14. Actividades propuestas como extensión</a></nav>
+</details>
+</aside>
+<main id="contenido"><h1>Contenidos consolidados del curso de redes complejas</h1>
+<p>Listado unificado de conceptos y procedimientos prácticos, organizado por áreas temáticas y metodológicas. </p>
+<h2 id="seccion-1">1. Librerías y módulos utilizados</h2>
+<table>
+<thead>
+<tr>
+<th>Librería o módulo</th>
+<th>Uso consignado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NetworkX</td>
+<td>Construcción y modificación de grafos, extracción de subgrafos, medidas topológicas y centralidades, comunidades, modelos de redes y layouts.</td>
+</tr>
+<tr>
+<td>pandas</td>
+<td>Lectura, selección, concatenación, agrupación y ordenamiento de datos; organización de medidas e indicadores en tablas.</td>
+</tr>
+<tr>
+<td>NumPy</td>
+<td>Operaciones con matrices y arreglos, umbralizado, escalado, correlación, muestreo y generación aleatoria para simulaciones.</td>
+</tr>
+<tr>
+<td>Matplotlib</td>
+<td>Representación de matrices, grafos, histogramas, diagramas de dispersión y curvas comparativas.</td>
+</tr>
+<tr>
+<td>Seaborn</td>
+<td>Representación de matrices mediante mapas de calor.</td>
+</tr>
+<tr>
+<td>powerlaw</td>
+<td>Ajuste de leyes de potencia a distribuciones de grado y representación de distribuciones acumuladas complementarias.</td>
+</tr>
+<tr>
+<td>python-louvain, mediante community_louvain</td>
+<td>Detección de comunidades con Louvain y evaluación de modularidad.</td>
+</tr>
+<tr>
+<td>scikit-learn</td>
+<td>Comparación de particiones mediante el índice de Rand ajustado, ARI.</td>
+</tr>
+<tr>
+<td>os, pathlib y glob</td>
+<td>Exploración de carpetas y selección de archivos mediante patrones en sus nombres.</td>
+</tr>
+<tr>
+<td>pickle</td>
+<td>Carga de diccionarios de posiciones de nodos precalculadas.</td>
+</tr>
+<tr>
+<td>tqdm</td>
+<td>Seguimiento del avance de iteraciones y simulaciones.</td>
+</tr>
+<tr>
+<td>itertools</td>
+<td>Enumeración de combinaciones de nodos para seleccionar parejas de semillas.</td>
+</tr>
+</tbody></table>
+<h2 id="seccion-2">2. Obtención, lectura y organización de datos</h2>
+<ul>
+<li>Descargar y descomprimir archivos desde una notebook; reconocer el uso de comandos de terminal para estas tareas y para instalar librerías adicionales.</li>
+<li>Listar los archivos de una carpeta, seleccionar subconjuntos mediante patrones en sus nombres y ordenarlos para su revisión.</li>
+<li>Trabajar con iteradores de archivos: recuperar un elemento y recorrer la colección seleccionada.</li>
+<li>Leer archivos de texto y CSV, configurar separadores, omitir líneas iniciales de metadatos y trabajar con datos sin encabezados.</li>
+<li>Inspeccionar la estructura y las dimensiones de las tablas cargadas y seleccionar columnas de tablas auxiliares.</li>
+<li>Convertir tablas a arreglos de NumPy y separar bloques de filas para obtener matrices independientes.</li>
+<li>Leer varias tablas de enlaces y concatenarlas en una tabla común.</li>
+<li>Agrupar registros por los extremos de cada enlace y sumar sus pesos para consolidar registros repetidos.</li>
+<li>Ordenar tablas de enlaces, grados, centralidades e indicadores según el criterio de análisis.</li>
+<li>Cargar etiquetas externas de nodos y coordenadas auxiliares para clasificar o representar los nodos.</li>
+</ul>
+<h2 id="seccion-3">3. Matrices de adyacencia y selección de enlaces</h2>
+<ul>
+<li>Interpretar una matriz de correlaciones como una matriz de adyacencia ponderada.</li>
+<li>Excluir autoenlaces anulando la diagonal principal. En matrices de correlaciones, utilizar la resta de la matriz identidad para eliminar las autocorrelaciones de la diagonal.</li>
+<li>Aplicar un umbral que convierta en cero los valores que no superan el corte y conserve los pesos restantes.</li>
+<li>Binarizar una matriz mediante una comparación con un umbral, obteniendo indicadores booleanos de presencia o ausencia de enlaces.</li>
+<li>Distinguir el umbralizado que conserva pesos de la binarización que conserva únicamente la existencia de conexiones.</li>
+<li>Aplicar un umbral sobre valores absolutos y distinguir la selección por magnitud de la selección por valor con signo.</li>
+<li>Definir una función reutilizable que convierta una densidad objetivo de enlaces en un umbral de corte.</li>
+<li>Extraer el triángulo inferior de una matriz simétrica, excluyendo la diagonal, para considerar cada enlace posible una sola vez.</li>
+<li>Ordenar esos valores de mayor a menor y seleccionar la posición de corte correspondiente a la densidad solicitada.</li>
+<li>Calcular un umbral propio para cada matriz y binarizar varias matrices con una densidad objetivo común; distinguir este procedimiento de utilizar un mismo umbral numérico en todas.</li>
+</ul>
+<h2 id="seccion-4">4. Construcción, inspección y modificación de grafos</h2>
+<ul>
+<li>Construir grafos desde matrices de adyacencia mediante la conversión de arreglos de NumPy de NetworkX: los valores no nulos determinan enlaces y pueden conservarse como pesos.</li>
+<li>Construir grafos desde matrices binarias para representar presencia o ausencia de enlaces.</li>
+<li>Definir funciones para leer listas de aristas y construir grafos simples no dirigidos.</li>
+<li>Diferenciar la lectura de pares de nodos, para enlaces sin ponderación, de ternas que incluyen el peso del enlace.</li>
+<li>Construir grafos ponderados desde listas de aristas almacenadas en un DataFrame, identificando las columnas de origen, destino y peso.</li>
+<li>Comprobar si un grafo es dirigido, admite enlaces múltiples, contiene atributos de peso y es conectado.</li>
+<li>Obtener las aristas de un grafo, llevar su información a una tabla y consultar los atributos de enlaces particulares.</li>
+<li>Extraer pesos mediante un diccionario de atributos o recorriendo las aristas junto con sus extremos y atributos.</li>
+<li>Crear una copia de un grafo ponderado y retirar sus atributos de peso para disponer de una versión sin ponderación.</li>
+<li>Eliminar autoenlaces directamente del grafo.</li>
+<li>Seleccionar nodos según un umbral de grado ponderado y construir el subgrafo inducido por ellos, conservando los enlaces entre los nodos seleccionados.</li>
+</ul>
+<h2 id="seccion-5">5. Conectividad, componentes, distancias y eficiencia</h2>
+<ul>
+<li>Identificar componentes conectadas, distinguir las que tienen varios nodos de los nodos aislados y ordenarlas por tamaño.</li>
+<li>Extraer los subgrafos de las componentes y reconocer la componente gigante como la de mayor tamaño.</li>
+<li>Comprender que en un grafo desconectado existen pares de nodos sin camino entre ellos y que no puede aplicarse directamente la longitud media de caminos mínimos al grafo completo como si fuera conectado.</li>
+<li>Calcular la longitud media de caminos mínimos por componente o dentro de la componente gigante, contando enlaces recorridos.</li>
+<li>Calcular el diámetro como el mayor de los caminos mínimos entre pares de nodos; en los procedimientos descritos se calcula sin ponderación.</li>
+<li>Calcular la eficiencia global como el promedio del inverso de las distancias mínimas entre pares distintos de nodos, asignando contribución cero a los pares sin conexión.</li>
+<li>Distinguir eficiencia global y promedio de distancias: la eficiencia permite incluir todo el grafo aunque esté desconectado.</li>
+<li>Definir funciones para muestrear pares de nodos al azar, de todo el grafo o de un subconjunto, y controlar la cantidad de pares utilizados.</li>
+<li>Calcular las longitudes de los caminos mínimos de los pares muestreados y estimar su media, reduciendo el trabajo frente a considerar todos los pares.</li>
+<li>Reconocer que las funciones de aproximación presentadas no incorporan pesos y requieren que exista un camino entre los pares utilizados.</li>
+</ul>
+<h2 id="seccion-6">6. Grados y caracterización topológica</h2>
+<ul>
+<li>Obtener el grado de cada nodo como su cantidad de enlaces; trabajar con la vista de grados de NetworkX para recorrer pares nodo–grado y consultar grados individuales.</li>
+<li>Obtener la secuencia de grados y calcular el grado promedio, tanto a partir de esa secuencia como de las cantidades de nodos y enlaces en un grafo no dirigido.</li>
+<li>Identificar los nodos de grado máximo y mínimo y construir tablas y rankings de grado indexados por nodo.</li>
+<li>Calcular el grado ponderado o fuerza como la suma de los pesos de los enlaces incidentes y distinguirlo de la cantidad de vecinos.</li>
+<li>Calcular la densidad como la proporción de enlaces presentes respecto de los posibles.</li>
+<li>Calcular el clustering local de cada nodo como el grado en que sus vecinos están conectados entre sí y el clustering promedio como la media de esos coeficientes.</li>
+<li>Calcular la transitividad como una medida global de cierre de triángulos y distinguirla del clustering promedio.</li>
+<li>Calcular clustering ponderado con la definición de NetworkX: normalización por el peso máximo de la red y combinación de los pesos de cada triángulo mediante una media geométrica.</li>
+<li>Calcular asortatividad por grado para analizar la asociación entre los grados de nodos conectados.</li>
+<li>Comparar los grados de los mismos nodos en dos grafos mediante correlación de Pearson y un diagrama de dispersión.</li>
+</ul>
+<h2 id="seccion-7">7. Centralidades e importancia de los nodos</h2>
+<ul>
+<li>Calcular centralidad de grado sin ponderación: cantidad de vecinos normalizada respecto del máximo posible; distinguirla del grado ponderado o fuerza.</li>
+<li>Conocer la centralidad de cercanía como una medida basada en las distancias mínimas desde un nodo hacia otros nodos de la red.</li>
+<li>Calcular centralidad de intermediación o betweenness como la participación de un nodo en los caminos mínimos entre otros pares de nodos.</li>
+<li>Trabajar con intermediación sin ponderación y con intermediación ponderada; distinguir que, en el cálculo ponderado descrito, NetworkX interpreta los pesos como longitudes o costos de recorrido.</li>
+<li>Calcular centralidad de autovector ponderada: asignar importancia según la importancia de los vecinos y la ponderación de sus conexiones.</li>
+<li>Calcular PageRank ponderado: asignar importancia según la estructura de enlaces y sus pesos dentro de un esquema de recorrido aleatorio.</li>
+<li>Reunir las distintas medidas en una tabla por nodo y generar rankings según cada criterio.</li>
+</ul>
+<h2 id="seccion-8">8. Visualización de matrices, grafos y atributos</h2>
+<ul>
+<li>Representar matrices de adyacencia mediante Matplotlib y mapas de calor de Seaborn, ajustando ejes, títulos y barras de color.</li>
+<li>Comparar matrices utilizando los mismos límites de color para que un mismo color represente un mismo valor.</li>
+<li>Representar grafos con la disposición predeterminada de NetworkX, con circular_layout y con spring_layout.</li>
+<li>Comprender el layout de resortes como una combinación de repulsión entre nodos y atracción entre nodos conectados hasta aproximarse a un equilibrio.</li>
+<li>Ajustar iteraciones y separación entre nodos y utilizar los pesos en el cálculo del layout cuando corresponda.</li>
+<li>Construir diccionarios que asocien nodos con coordenadas externas para representarlos en dos dimensiones.</li>
+<li>Cargar posiciones precalculadas desde archivos serializados con pickle y reutilizarlas.</li>
+<li>Compartir posiciones entre grafos para comparar conexiones y recalcular el layout sobre el propio grafo para contrastar disposiciones.</li>
+<li>Dibujar nodos, etiquetas y aristas por separado y definir funciones reutilizables para representar redes ponderadas.</li>
+<li>Convertir los pesos en grosores de aristas, normalizarlos respecto del máximo y controlar factores de amplificación visual.</li>
+<li>Filtrar las aristas dibujadas según sus pesos, distinguiendo ese filtro visual de la selección del subgrafo utilizado en los cálculos.</li>
+<li>Representar grado, clustering local y centralidades mediante colores; preparar los valores en el orden de los nodos representados, normalizar sus escalas e incorporar barras de color.</li>
+<li>Representar un atributo mediante color y tamaño simultáneamente, utilizar escalado mínimo–máximo y controlar la exageración de diferencias de tamaño.</li>
+<li>Utilizar transformaciones del grado ponderado para definir tamaños de nodos.</li>
+<li>Colorear comunidades con paletas categóricas y conservar los grosores asociados a los pesos.</li>
+<li>Ajustar transparencia, colores, tamaños y formato de etiquetas; seleccionar etiquetas según criterios y organizar varias visualizaciones en una figura.</li>
+</ul>
+<h2 id="seccion-9">9. Distribuciones y ajuste de leyes de potencia</h2>
+<ul>
+<li>Construir histogramas de pesos de enlaces, grados, grado ponderado y clustering local; normalizarlos como densidades para que el área total sea uno.</li>
+<li>Elegir la cantidad y los límites de los intervalos; trabajar también con intervalos de ancho unitario y marcas de eje para grados enteros.</li>
+<li>Comparar distribuciones con los mismos intervalos, incluyendo clustering sin pesos y ponderado.</li>
+<li>Construir intervalos espaciados logarítmicamente, obtener sus densidades y calcular sus centros para representar la distribución mediante puntos.</li>
+<li>Configurar ambos ejes en escala logarítmica para explorar la forma de la distribución y su cola.</li>
+<li>Ajustar leyes de potencia a distribuciones de grado con powerlaw, tratando los grados como una variable discreta.</li>
+<li>Definir un grado mínimo a partir del cual ajustar la cola y realizar también ajustes con selección automática de ese mínimo.</li>
+<li>Identificar el exponente, el grado mínimo y la distancia de Kolmogórov–Smirnov entre las distribuciones acumuladas empírica y ajustada.</li>
+<li>Distinguir la distribución acumulada, CDF, de su complementaria, CCDF, que describe la probabilidad de superar un valor.</li>
+<li>Superponer las CCDF empírica y ajustada para examinar el comportamiento de la cola.</li>
+</ul>
+<h2 id="seccion-10">10. Detección, evaluación y comparación de comunidades</h2>
+<ul>
+<li>Aplicar Girvan–Newman como algoritmo divisivo que elimina sucesivamente aristas de alta intermediación de aristas para obtener particiones.</li>
+<li>Recorrer el iterador de particiones de NetworkX y recuperar los conjuntos de nodos de cada comunidad.</li>
+<li>Calcular la modularidad de cada partición, evaluando la concentración de conexiones dentro de comunidades respecto de un modelo de referencia basado en los grados.</li>
+<li>Registrar la modularidad a lo largo de las divisiones y conservar la partición de mayor modularidad entre las evaluadas.</li>
+<li>Distinguir la eliminación por intermediación sin pesos de la evaluación de modularidad que utiliza el atributo de peso por defecto en el procedimiento descrito.</li>
+<li>Graficar modularidad frente a las etapas del procedimiento para examinar niveles de partición.</li>
+<li>Convertir particiones expresadas como conjuntos de nodos en diccionarios de asignación de comunidad.</li>
+<li>Aplicar Louvain con python-louvain para obtener particiones mediante optimización heurística de modularidad y evaluar su modularidad.</li>
+<li>Comparar particiones con el índice de Rand ajustado, ARI, de scikit-learn: acuerdo entre asignaciones de comunidad corregido por el acuerdo esperado por azar.</li>
+<li>Preparar etiquetas de comunidad referidas a los mismos nodos en el mismo orden.</li>
+</ul>
+<h2 id="seccion-11">11. Prototipos de redes y comparación mediante simulaciones</h2>
+<ul>
+<li>Estudiar la noción de mundo pequeño mediante caminos mínimos medios cortos y clustering promedio elevado, comparados con modelos de referencia.</li>
+<li>Generar redes de Erdős–Rényi con gnm_random_graph, fijando números de nodos y enlaces y distribuyendo los enlaces al azar.</li>
+<li>Generar redes de Barabási–Albert con barabasi_albert_graph y comprender el crecimiento con conexión preferencial hacia nodos de mayor grado.</li>
+<li>Elegir la cantidad de enlaces agregados por cada nuevo nodo para aproximar el grado medio de una red de referencia.</li>
+<li>Generar redes de Watts–Strogatz con watts_strogatz_graph, definiendo número de nodos, cantidad inicial de vecinos y probabilidad de reconexión.</li>
+<li>Realizar múltiples simulaciones de cada prototipo, manteniendo comparables las propiedades básicas que permite controlar cada modelo.</li>
+<li>Calcular clustering promedio, longitud media de caminos mínimos y grado medio para cada realización y reunir los indicadores en una tabla.</li>
+<li>Ajustar leyes de potencia a los grados de las realizaciones de Barabási–Albert y registrar sus exponentes.</li>
+<li>Construir grillas de histogramas por modelo e indicador, incorporando la medida del grafo analizado como referencia.</li>
+<li>Comparar modelos mediante un diagrama de dispersión de clustering promedio frente a longitud media de caminos mínimos.</li>
+<li>Examinar la variabilidad de los exponentes ajustados mediante un histograma.</li>
+</ul>
+<h2 id="seccion-12">12. Simulación de difusión de información</h2>
+<ul>
+<li>Comprender el Independent Cascade Model como un proceso estocástico en pasos discretos, iniciado por un conjunto de nodos semilla.</li>
+<li>Implementar una versión para grafos no dirigidos y ponderados y registrar en un diccionario el instante de activación de cada nodo.</li>
+<li>Identificar los nodos recién activados y recorrer sus vecinos todavía inactivos.</li>
+<li>Asignar a cada intento una probabilidad igual al peso del enlace dividido por el peso máximo del grafo utilizado en la simulación.</li>
+<li>Resolver intentos mediante números aleatorios y registrar activaciones exitosas para el paso siguiente.</li>
+<li>Dar a cada nodo recién activado una sola oportunidad de activar a cada vecino y evitar reactivar nodos ya alcanzados.</li>
+<li>Iterar hasta que no se produzcan nuevas activaciones.</li>
+<li>Definir una función de visualización del proceso que distinga mediante colores nodos recién activados, activados previamente e inactivos.</li>
+<li>Mantener posiciones y escalas visuales para seguir la evolución entre pasos.</li>
+</ul>
+<h2 id="seccion-13">13. Selección de semillas y evaluación de estrategias de influencia</h2>
+<ul>
+<li>Definir el presupuesto de semillas como la cantidad de nodos activados al inicio.</li>
+<li>Seleccionar semillas mediante rankings de grado, grado ponderado, PageRank e intermediación y agregar un orden aleatorio como referencia.</li>
+<li>Variar el presupuesto y repetir la difusión para cada combinación de criterio y cantidad de semillas.</li>
+<li>Promediar el alcance final y normalizarlo por la cantidad de nodos para expresar una tasa de difusión.</li>
+<li>Normalizar el presupuesto por el tamaño de la red y comparar curvas de alcance frente a proporción de semillas.</li>
+<li>Distinguir entre repetir la difusión con un conjunto fijo de semillas y volver a seleccionar semillas al azar en cada ensayo.</li>
+<li>Analizar conceptualmente la redundancia entre semillas: un nodo que otra semilla podría alcanzar no necesariamente aporta el mismo alcance adicional que uno ubicado en otra zona de la red.</li>
+<li>Definir un procedimiento de selección aleatoria de semillas que ejecute la cascada hasta detenerse y acumule las medidas de alcance.</li>
+<li>Calcular promedios acumulados del alcance normalizado y representarlos mediante un histograma, incorporando referencias gráficas de PageRank e intermediación.</li>
+<li>Enumerar todas las parejas candidatas mediante combinaciones de nodos, sin distinguir el orden de sus integrantes.</li>
+<li>Repetir la difusión para cada pareja, estimar su alcance medio y ordenar las parejas según ese criterio para buscar la mejor dentro de las evaluadas.</li>
+<li>Representar la distribución de estimaciones de alcance y compararla con estrategias basadas en rankings de centralidad.</li>
+<li>Comprender el costo combinatorio de la búsqueda por fuerza bruta y su diferencia frente a seleccionar semillas mediante un ranking.</li>
+</ul>
+<h2 id="seccion-14">14. Actividades propuestas como extensión</h2>
+<ul>
+<li>Elegir un umbral que iguale la densidad de dos redes y analizar cómo modifica los análisis posteriores.</li>
+<li>Implementar una medida de grado ponderado.</li>
+<li>Aplicar Girvan–Newman a una segunda red.</li>
+</ul>
+<p><strong>Datasets y archivos mencionados:</strong> Windsurfers; DataSujetos; aal_extended_withCoords; Email; Terroristas; Game of Thrones / A Song of Ice and Fire.</p>
+</main>
+</div>
+<script>
+const menu=document.getElementById('indice');
+const small=window.matchMedia('(max-width:760px)');
+menu.open=!small.matches;
+small.addEventListener('change',event=>{menu.open=!event.matches});
+const links=[...document.querySelectorAll('nav a')];
+const sections=[...document.querySelectorAll('main h2')];
+let ticking=false;
+function markSection(){
+  let selected=sections[0];
+  for(const section of sections){if(section.getBoundingClientRect().top<=130)selected=section;else break}
+  links.forEach(link=>{if(link.hash==='#'+selected.id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')});
+  ticking=false;
+}
+window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(markSection);ticking=true}},{passive:true});
+links.forEach(link=>link.addEventListener('click',()=>{if(small.matches)menu.open=false}));
+markSection();
+</script>
+</body>
+</html>
